@@ -4,13 +4,13 @@ window.addEventListener('load', init);
 
 // Available Levels
 const levels = {
-  easy: '5',
-  medium: '3',
-  hard: '2'
+  easy: 7,
+  medium: 5,
+  hard: 3
 }
 
 //To change level
-const currentLevel = levels.medium;
+const currentLevel = levels.easy;
 
 let time = currentLevel;
 let score = 0;
@@ -69,7 +69,7 @@ function startMatch() {
 //Match currentWord to wordInput
 function matchWords() {
   if(wordInput.value === currentWord.innerHTML) {
-    message.innerHTML = 'Correct!!!';
+    message.innerHTML = '';
     return true;
   } else {
     message.innerHTML = '';
