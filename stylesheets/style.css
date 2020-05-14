@@ -1,0 +1,16 @@
+.fbody {
+    font-family: preeti;
+  }
+@font-face {
+    font-family: preeti;
+    src: url(PREETI.woff);
+  }
+.klayout{
+  display:block !important;
+  margin-left: auto !important;
+  margin-right: auto !important;
+  width: 50% !important;
+}
+.fonen{
+  font-family: Arial, Helvetica, sans-serif;
+}
