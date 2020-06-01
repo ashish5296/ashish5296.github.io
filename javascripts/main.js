@@ -9,6 +9,10 @@ const levels = {
   hard: 3
 }
 
+//time in Nepali
+const timeNepali = [')','!','@','#','$','%','^','&','*'];
+
+
 //To change level
 const currentLevel = levels.easy;
 
@@ -195,7 +199,7 @@ const words = [
 //Initilize Game
 function init(){
   //show number of seconds in UI
-  seconds.innerHTML = currentLevel;
+  seconds.innerHTML = timeNepali[currentLevel];
   // Load word form array
   showWord(words);
   //matching word with wordInput
@@ -253,7 +257,7 @@ function countdown() {
     isPlaying = false;
   }
   //Show time
-  timeDisplay.innerHTML = time;
+  timeDisplay.innerHTML = timeNepali[time];
 }
 
 //Check game Status
