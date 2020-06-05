@@ -9,9 +9,19 @@ const levels = {
   hard: 3
 }
 
-//time in Nepali
-const timeNepali = [')','!','@','#','$','%','^','&','*'];
+//Numbers in Preeti
+const numNepali = [')','!','@','#','$','%','^','&','*'];
 
+//Convert Number to Nepali preeti
+function convertToNepaliDigit(number){
+    var number = number.toString();
+    var sliced = [];
+      for(i=0; i< number.length; i++){
+        sliced.push(numNepali[number.substr(number.length - 1)]);
+        number = number.slice(0,-1);
+      }
+    return sliced.reverse().join('').toString();
+}
 
 //To change level
 const currentLevel = levels.easy;
@@ -199,7 +209,7 @@ const words = [
 //Initilize Game
 function init(){
   //show number of seconds in UI
-  seconds.innerHTML = timeNepali[currentLevel];
+  seconds.innerHTML = numNepali[currentLevel];
   // Load word form array
   showWord(words);
   //matching word with wordInput
@@ -221,9 +231,9 @@ function startMatch() {
   }
   // If score is -1, display 0
   if(score === -1) {
-    scoreDisplay.innerHTML = 0;
+    scoreDisplay.innerHTML = ')';
   } else {
-    scoreDisplay.innerHTML = score;
+    scoreDisplay.innerHTML = convertToNepaliDigit(score);
   }
 }
 
@@ -257,7 +267,7 @@ function countdown() {
     isPlaying = false;
   }
   //Show time
-  timeDisplay.innerHTML = timeNepali[time];
+  timeDisplay.innerHTML = numNepali[time];
 }
 
 //Check game Status
